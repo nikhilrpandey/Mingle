@@ -1,8 +1,10 @@
-// it returns a function
 const express = require('express');
 const app = express();
 
 const PORT = 8000;
+
+// For any request we require our routes index
+app.use('/',require('./routes'));
 
 app.listen(PORT,(err)=>{
     if(err){
