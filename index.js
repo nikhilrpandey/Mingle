@@ -1,6 +1,7 @@
 const express = require('express');
 // this is for the layouts in the views rendered to the users
 const expressLayouts = require('express-ejs-layouts');
+const db=require('./config/mongoose');
 const app = express();
 
 // setting up the port
