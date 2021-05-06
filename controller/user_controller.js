@@ -25,6 +25,7 @@ module.exports.create = function(req,res){
             User.create(req.body,(err,user)=>{
                 if(err){console.log('error signing up the user');return}
 
+                console.log('invalid data');
                 return res.redirect('/users/sign-in');
             })
         }else
