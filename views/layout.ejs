@@ -4,6 +4,7 @@
             <%= title %> 
         </title>
         <link rel="stylesheet" href="/styles/layout.css">
+        <%- style %> 
     </head>
     <body id="bod">
         <!-- this is callled partial code which is common to all the pages in the website -->
@@ -11,5 +12,6 @@
             <%- body %> 
         <!-- footer and header are partials for this page -->
         <%- include('_footer') %>
+     
     </body>
 </html>

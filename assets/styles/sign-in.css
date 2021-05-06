@@ -1,0 +1,16 @@
+.sign-up{
+    height: 200px;
+    width: 300px;
+    background-color: lightcoral;
+    margin: 0 auto 0;
+}
+
+label{
+    padding: 10px;
+    margin: 5px;
+    text-align: left;
+}
+input{
+    padding: 5px;
+    margin: 5px;
+}

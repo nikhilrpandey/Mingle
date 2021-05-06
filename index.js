@@ -17,7 +17,7 @@ app.use(expressLayouts);
 
 // setting up the layout fetching 
 app.set('layout extractStyles',true);
-app.set('layout extractScritps',false);
+// app.set('layout extractScritps',true);
 
 
 // Setting up the views engine
