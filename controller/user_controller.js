@@ -2,7 +2,14 @@ const User = require('../models/userSchema');
 
 
 module.exports.profile = function(req,res){
-    res.render('users',{title:'users'})
+    User.findById(req.cookies['user_id'],(err,user)=>{
+        if(err){console.log("error fetching page...");return}
+        if(!user){
+            res.redirect('/users/sign-in');
+        }else{
+            res.render('users',{title:'profile',username:user.name});
+        }
+    })
 }
 
 module.exports.signin = function(req,res){
@@ -31,4 +38,20 @@ module.exports.create = function(req,res){
         }else
             return res.redirect('back');
     });  
+}
+
+module.exports.create_session = function(req,res){
+    User.findOne({email:req.body.email},(err,user)=>{
+        if(err){console.log("Error in fetching details...");return}
+
+        if(user){
+            if(user.password!=req.body.password){
+                return res.redirect('back');
+            }
+            res.cookie('user_id',user.id);
+            return res.redirect('/users/profile');
+        }else{
+            return res.redirect('back');
+        }
+    })
 }
